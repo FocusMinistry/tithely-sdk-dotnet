@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{37D24727-0BE5-4685-A15A-C30822795D95}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Tithely.Api</RootNamespace>
+    <AssemblyName>Tithely.Api</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\RestSharp.105.2.3\lib\net46\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Attributes\QOAttribute.cs" />
+    <Compile Include="Enum\AddressType.cs" />
+    <Compile Include="Enum\CountryTypeCode.cs" />
+    <Compile Include="Enum\GenderType.cs" />
+    <Compile Include="Enum\PaymentMethodType.cs" />
+    <Compile Include="Enum\PhoneType.cs" />
+    <Compile Include="Enum\ProjectStatusType.cs" />
+    <Compile Include="Enum\StatusType.cs" />
+    <Compile Include="Enum\VolunteerParticipantStatus.cs" />
+    <Compile Include="Enum\VolunteerParticipantType.cs" />
+    <Compile Include="Exceptions\BaseException.cs" />
+    <Compile Include="Exceptions\PropertyNotAllowedException.cs" />
+    <Compile Include="Extensions\RestSharpExtensions.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="Model\Account.cs" />
+    <Compile Include="Model\AccountResponse.cs" />
+    <Compile Include="Model\Address.cs" />
+    <Compile Include="Model\Charge.cs" />
+    <Compile Include="Model\ChargeResponse.cs" />
+    <Compile Include="Model\Organization.cs" />
+    <Compile Include="Model\OrganizationResponse.cs" />
+    <Compile Include="Model\PaymentMethod.cs" />
+    <Compile Include="Model\PaymentMethodResponse.cs" />
+    <Compile Include="Model\TithelyResponse.cs" />
+    <Compile Include="Model\TithelyResponseData.cs" />
+    <Compile Include="Model\TithelyRestResponse.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QueryObject\BaseQO.cs" />
+    <Compile Include="QueryObject\DesignationQO.cs" />
+    <Compile Include="Sets\AccountSet.cs" />
+    <Compile Include="Sets\BaseApiSet.cs" />
+    <Compile Include="Sets\ChargeSet.cs" />
+    <Compile Include="Sets\OrganizationSet.cs" />
+    <Compile Include="Sets\PaymentMethodSet.cs" />
+    <Compile Include="TithelyClient.cs" />
+    <Compile Include="TithelyOptions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Debug\Tithely.Api.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\Tithely.Api.csprojAssemblyReference.cache" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Debug\" />
+    <Folder Include="bin\Release\" />
+    <Folder Include="obj\Debug\TempPE\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

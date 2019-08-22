@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29209.62
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{27F16083-166C-485D-9ABD-DA585223B5E0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{9439E85F-D81B-4253-B81F-6835362EC685}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{D4B6CA92-50B6-4B86-8C10-98D5C8BBA798}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tithely.Api", "src\lib\Tithely.Api\Tithely.Api.csproj", "{37D24727-0BE5-4685-A15A-C30822795D95}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tithely.Api.Tests", "src\tests\Tithely.Api.Tests\Tithely.Api.Tests.csproj", "{B54BE976-F5BB-40C7-9B7E-C7F29519D128}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{37D24727-0BE5-4685-A15A-C30822795D95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37D24727-0BE5-4685-A15A-C30822795D95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37D24727-0BE5-4685-A15A-C30822795D95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37D24727-0BE5-4685-A15A-C30822795D95}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B54BE976-F5BB-40C7-9B7E-C7F29519D128}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B54BE976-F5BB-40C7-9B7E-C7F29519D128}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B54BE976-F5BB-40C7-9B7E-C7F29519D128}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B54BE976-F5BB-40C7-9B7E-C7F29519D128}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D4B6CA92-50B6-4B86-8C10-98D5C8BBA798} = {27F16083-166C-485D-9ABD-DA585223B5E0}
+		{37D24727-0BE5-4685-A15A-C30822795D95} = {D4B6CA92-50B6-4B86-8C10-98D5C8BBA798}
+		{B54BE976-F5BB-40C7-9B7E-C7F29519D128} = {9439E85F-D81B-4253-B81F-6835362EC685}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6DA6FAE1-7CA1-4E67-B323-3B513D306390}
+	EndGlobalSection
+EndGlobal
