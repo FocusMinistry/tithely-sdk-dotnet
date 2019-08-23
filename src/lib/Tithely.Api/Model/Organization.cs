@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 namespace Tithely.Api.Model {
     public class Organization {
         [JsonProperty("organization_id")]
-        public string ID { get; set; }
+        public string OrganizationID { get; set; }
 
         [JsonProperty("widget_id")]
         public string WidgetID { get; set; }

@@ -7,6 +7,8 @@ using Newtonsoft.Json;
 
 namespace Tithely.Api.Model {
     public class ChargeResponse : TithelyResponse<Charge> {
+        [JsonProperty("charge_id")]
+        public string ChargeID { get; set; }
 
     }
 }
