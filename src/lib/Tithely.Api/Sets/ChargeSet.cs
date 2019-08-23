@@ -3,12 +3,13 @@ using Tithely.Api.Extensions;
 
 namespace Tithely.Api.Sets {
     public class ChargeSet : BaseApiSet<ChargeResponse> {
+        private readonly TithelyOptions _options;
         private const string _createUrl = "/api/v1/accounts";
         private const string _getUrl = "/api/v1/accounts/{0}";
         private const string _listUrl = "/api/v1/accounts-list-all";
 
         public ChargeSet(TithelyOptions options) : base(options) {
-
+            _options = options;
         }
 
         protected override string GetUrl => _getUrl;
@@ -28,7 +29,7 @@ namespace Tithely.Api.Sets {
             AddParameter("amount", amount.ToString());
             AddParameter("giving_type", givingType);
 
-            return base.Create("/api/v1/charge-once");
+            return base.Create(_options.ApiUrl + "/api/v1/charge-once");
         }
 
         public ITithelyRestResponse<ChargeResponse> Refund(string chargeID) {
