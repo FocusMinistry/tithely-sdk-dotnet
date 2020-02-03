@@ -4,9 +4,9 @@ using Tithely.Api.Extensions;
 namespace Tithely.Api.Sets {
     public class ChargeSet : BaseApiSet<ChargeResponse> {
         private readonly TithelyOptions _options;
-        private const string _createUrl = "/api/v1/accounts";
-        private const string _getUrl = "/api/v1/accounts/{0}";
-        private const string _listUrl = "/api/v1/accounts-list-all";
+        private const string _createUrl = "/api/v1/charges";
+        private const string _getUrl = "/api/v1/charges/{0}";
+        private const string _listUrl = "/api/v1/charges-list";
 
         public ChargeSet(TithelyOptions options) : base(options) {
             _options = options;
