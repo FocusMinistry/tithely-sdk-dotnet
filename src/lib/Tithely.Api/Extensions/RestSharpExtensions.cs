@@ -24,6 +24,8 @@ namespace Tithely.Api.Extensions {
                         response.StatusCode = System.Net.HttpStatusCode.BadRequest;
                     }
                 }
+
+                response.Result = restResponse.Data;
             }
             return response;
         }
