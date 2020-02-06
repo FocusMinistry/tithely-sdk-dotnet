@@ -1,5 +1,8 @@
 ﻿using Tithely.Api.Model;
 using RestSharp;
+using System;
+using System.Dynamic;
+using System.Collections.Generic;
 
 namespace Tithely.Api.Extensions {
     public static class RestSharpExtensions {
@@ -13,7 +16,14 @@ namespace Tithely.Api.Extensions {
                 response.ErrorMessage = restResponse.ErrorMessage;
             }
             else {
-                response.Result = restResponse.Data;
+                if (restResponse.Content.Contains("status")) {
+                    var data = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(restResponse.Content);
+                    var status = data.status.ToString();
+
+                    if (status == "fail") {
+                        response.StatusCode = System.Net.HttpStatusCode.BadRequest;
+                    }
+                }
             }
             return response;
         }
@@ -22,6 +32,19 @@ namespace Tithely.Api.Extensions {
             var response = restResponse.ToTithelyResponse();
             response.RequestValue = requestInput;
             return response;
+        }
+
+        private static string GetPropertyValue(dynamic obj, string name) {
+            Type objType = obj.GetType();
+
+            if (objType == typeof(ExpandoObject) && ((IDictionary<string, object>)obj).ContainsKey(name)) {
+                return ((IDictionary<string, object>)obj)[name].ToString();
+            }
+
+            if (objType.GetProperty(name) != null) {
+               return objType.GetProperty(name).GetValue(objType).ToString();
+            }
+            return null;
         }
     }
 }
